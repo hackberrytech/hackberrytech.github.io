@@ -1,0 +1,172 @@
+/*-----------------------------------------------------------------------------
+   17. portfolio Item
+-----------------------------------------------------------------------------*/
+
+.post-intro{
+    position: relative;
+    width:100%;
+    background-size: cover;
+    background-position: center center;
+    
+    &:before{
+        content:'';
+        display: block;
+        padding-top: 35%;
+        min-height: 200px;
+    }
+    
+    @media only screen and(max-width:992px){
+        background-attachment: scroll !important;
+        background-position:center center !important;
+    }
+    
+    &.overlay{
+        &:before{
+            background-color: rgba($base-color2,1);
+        }
+    }
+}
+
+.equal-element{
+    @include media("<desktop"){
+        display: none;
+    }
+}
+
+.equal-img,
+.equal-content{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    
+    @include media("<desktop"){
+        position: relative;
+    }
+}
+
+.item-description{
+    padding: $space-y 0;
+    text-align: center;
+    background-image: url(../images/pattern/pattern-light.png);
+    
+    .item-description__title{
+        margin-top: 0;
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+        display: inline-block;
+        border-bottom: 8px solid;
+    }
+    
+    .item-description__client{
+        text-transform: uppercase;
+        color:$headers-color;
+    }
+    
+    .item-description__tags{
+        margin-top:$space-small;
+        text-transform: uppercase;
+        font-size: 12px;
+        
+        li{
+            display: inline-block;
+            
+            &:before{
+                content:'\f068';
+                font-family: 'FontAwesome';
+                margin:0 3px;
+                letter-spacing: 1px;
+            }
+            
+            &:first-child{
+                &:before{
+                    content:none;
+                }
+            }
+        }
+    }
+    
+    &.center{
+        padding-left:12%;
+        padding-right:12%;
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        
+        .dis-table{
+              display: table;
+              width: 100%;
+              height: 100%;
+            
+            .dis-cell{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        
+        @include media("<desktop"){
+            position: relative;
+            padding-left:15px;
+            padding-right:15px;
+        }
+    }
+    
+    &.no-padding{
+        @include media(">desktop"){
+            padding: 0;
+        }
+    }
+}
+
+.item-footer{
+    padding:$space-y 0;
+    background-image: url(../images/pattern/pattern-dark.jpg);
+    
+    .second-title{
+        color:$stable-color;
+    }
+}
+
+
+.item-share{
+    display: block;
+    margin-top:$space-small;
+    
+    li{
+        display: inline-block;
+        
+        a{
+            display: block;
+            color:$stable-color;
+            margin:0 5px;
+            
+            &:hover,
+            &:focus,
+            &:active{
+                color:$stable-color;
+            }
+        }
+    }
+}
+
+.item-nav{
+    height: 80px;
+    background-color: $main-color;
+    text-align: center;
+    line-height: 80px;
+
+
+
+    >div{
+        a{
+            color:$base-color;
+            display: block
+        }
+        &:nth-child(n+1){
+            border-left:1px solid $base-color;
+        }
+    }
+}

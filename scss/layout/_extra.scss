@@ -1,0 +1,145 @@
+/*-----------------------------------------------------------------------------
+   3. Extra Classes
+-----------------------------------------------------------------------------*/
+
+/*********************************************
+	-	ADDIATIONAL CLASSES TO BOOTSTRAP 	-
+**********************************************/
+
+
+.container-fluid-flat{
+    position: relative;
+    
+    .row{
+        margin-left:0;
+        margin-right:0;
+    } 
+    
+    [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+} 
+
+
+
+.container,
+.container-fluid{ 
+    &.no-gutter{
+        .row{
+            margin: 0;
+        }
+        [class*='col-']{
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    &.add-margin{
+       [class*='col-']{
+           margin-right: 15px;
+           margin-left: 15px;
+        }
+    }
+}
+
+
+@include media(">wide-screen"){
+    .container-fluid{
+        padding-left: 84px;
+        padding-right: 84px;
+    }
+}
+
+
+/*********************************************
+	-	SPACE CLASSES	-
+**********************************************/
+
+.space-y{
+    padding-top:$space-y;
+    padding-bottom:$space-y;
+}
+
+.space-y-half{
+    padding-top:$space-y-half;
+    padding-bottom:$space-y-half;
+}
+
+
+.space-small{
+    padding-top:$space-small;
+    padding-top:$space-small;
+}
+
+.space-y-t{
+    padding-top:$space-y;
+}
+
+.space-y-b{
+    padding-bottom:$space-y;
+}
+
+.space-y-t-h{
+    padding-top:$space-y-half;
+}
+
+.space-y-b-h{
+    padding-bottom:$space-y-half;
+}
+
+.space-y-t-s{
+    padding-top:$space-small;
+}
+
+
+.space-y-b-s{
+    padding-bottom:$space-small;
+}
+
+.space-nav{
+    @include media(">desktop"){
+        margin-top: 82px;
+    }
+}
+
+/*********************************************
+	-	BORDER	-
+**********************************************/
+
+.border-b{
+    border-bottom:1px solid darken($base-color2,10%);
+}
+
+/*********************************************
+	-	SEPARATOR	-
+**********************************************/
+
+.separator{
+    margin:0 3px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+
+/*********************************************
+	-	IMAGE FULL	-
+**********************************************/
+
+.img-full{
+    img{
+        position: relative;
+        max-width: none
+    }
+}
+
+/*********************************************
+	-	HIGHLIGHT SECTION	-
+**********************************************/
+
+.highlight-section{
+    background-color: $base-color2;
+}
+
+.highlight-section2{
+    background-color: rgba($base-color2 , .5);
+}

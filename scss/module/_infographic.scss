@@ -1,0 +1,218 @@
+/*-----------------------------------------------------------------------------
+   10. Infographic
+-----------------------------------------------------------------------------*/
+
+
+/*PROGRESS BAR */
+
+
+.progress-wrap{
+    padding-top:42px;
+}
+
+.progress{
+    height: 10px;
+    box-shadow:none;
+    border-radius: 0;
+    background-color: $base-color2;
+}
+
+.progress-bar{
+    transition: none;
+    background-color: $base-color;
+
+}
+
+.bar{
+    position: relative;
+    
+    h6{
+        margin:0 0 1rem;
+        text-transform: uppercase;
+    }
+    
+    .timer{
+        display: block;
+        width:41px;
+        position: absolute;
+        right:0;
+        top:-2px;
+        padding:2px 5px;
+        margin-bottom: 2px;
+        text-align: left;
+        color:$base-color;
+
+        &:after{
+            content:' %';
+            display: inline-block;
+            position: absolute;
+            right:0;
+            top:3px;
+        }
+    }
+}
+
+
+.counter-content{
+    border-top: 1px solid lighten($base-color, 10%);
+    .counter{
+        border-right: 1px solid lighten($base-color, 10%);
+        
+        &:last-child{
+            border:0;
+        }
+    }
+    
+    i{
+        color:$main-color;
+    }
+    
+    .timer{
+        color:$main-color;
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    
+    .label{
+        text-transform: uppercase;
+        font-size: 16px;
+        padding-top:10px;
+        display: block;
+    }
+}
+
+
+/*BUBBLE*/
+
+.infograph-container{
+    background: $main-color url(../images/pattern/pattern-red.png);
+}
+
+.bubble{
+    position: relative;
+    @include media(">desktop"){
+        width: 80%;
+        max-width:600px;
+        height:600px;
+    }
+    margin: auto;
+    
+    .bubble-center{
+        @include size(300px);
+        @include center(xy);
+        position: absolute;
+        text-align: center;
+        border-radius: 100%;
+        background-color: #fff;
+        
+        span{
+            display: block;
+            position: relative;
+            @include center(xy);
+            color:$main-color;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 30px;
+        }
+        
+        @include media("<desktop"){
+            display: none;
+        }
+        
+        
+    }
+    
+    ul{
+        text-align: center;
+        li{
+            position: absolute;
+            text-transform: uppercase;
+            color:#fff;
+            border-radius: 100%;
+            text-align: center;
+            
+            span{
+                position: relative;
+                display: block;
+                @include center(xy);
+            }
+            
+            @include media("<desktop"){
+                @include size(110px);
+                margin: .5em;
+                position: relative;
+                top:auto;
+                left:auto;
+                display: inline-block;
+                background-color: rgba(255,255,255,.5);
+                font-size: 12px;
+            }
+        }
+        
+        @include media(">desktop"){
+            
+            .e-commerc{
+                @include size(200px);
+                top:150px;
+                left:-20px;
+                background-color: rgba(255,255,255,.5);
+            }
+
+            .html5{
+                @include size(150px);
+                top:50px;
+                left:100px;
+                background-color: rgba(255,255,255,.4);
+            }
+
+            .print{
+                @include size(180px);
+                top:0;
+                left:240px;
+                background-color: rgba(255,255,255,.55);
+            }
+
+            .responsive{
+                @include size(160px);
+                top:70px;
+                right:40px;
+                background-color: rgba(255,255,255,.42);
+            }
+
+            .ui{
+                @include size(220px);
+                top:230px;
+                right:-30px;
+                background-color: rgba(255,255,255,.5);
+            }
+
+            .branding{
+                @include size(210px);
+                bottom:0px;
+                right:80px;
+                background-color: rgba(255,255,255,.3);
+            }
+
+            .bloging{
+                @include size(150px);
+                bottom:110px;
+                left:60px;
+                background-color: rgba(255,255,255,.2);
+            }
+
+            .motion{
+                @include size(180px);
+                bottom:0;
+                left:140px;
+                background-color: rgba(255,255,255,.45);
+            }
+
+            .mobile{
+                @include size(170px);
+                bottom:110px;
+                left:-90px;
+                background-color: rgba(255,255,255,.3);
+            }
+        }
+    }
+}

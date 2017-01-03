@@ -1,0 +1,379 @@
+/*-----------------------------------------------------------------------------
+   6. Off Canvas Menu
+-----------------------------------------------------------------------------*/
+
+.content-wrapper {
+    position: relative;
+    background-color: #fff;
+//    z-index: 105;
+    @include transition(transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+.content-wrapper.mm-menu-open {
+  @include transform(translateX(-300px));
+}
+
+
+.mm-button-band,
+.brand-band{
+    @include transform(translateX(0));
+    @include transition(transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+.nav-wrap.is-fixed.off-canvas{
+    @include transition(background-color 0.2s ,  transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+.mm-menu-open{
+    .off-canvas{
+        
+        &.is-fixed,
+        &.is-fill{
+            background-color: transparent;
+            @include transition(background-color .5s , transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+            
+            .brand{
+                .logo-dark{
+                    opacity:0;
+                }
+                
+                .logo-white{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .off-canvas{
+      @include transform(translateX(-300px));
+    }
+    
+    .brand-band{
+        @include media('>desktop'){
+            @include transform(translateX(300px));
+        }
+    }
+    
+    .mm-button-band{
+        @include media('<desktop'){
+            @include transform(translateX(300px));
+        }
+    }
+}
+
+
+
+.off-canvas{
+    
+    @include media('>desktop'){
+        text-align: center;
+    }
+
+    .button-trigger{
+        float: left;
+        line-height:60px;
+    }
+    
+    .brand-band{
+        text-align: center;
+       @include media('<=desktop'){
+           .brand{
+               float: none;
+           }
+       }
+    }
+    
+    .mm-button-band,
+    .brand-band{
+        @include media('>desktop'){
+           position: absolute;
+        }
+    }
+    
+    .brand-band{
+        @include media('>desktop'){
+           left: 0;
+        }
+    }
+    
+    .mm-button-band{
+        right:0;
+        top:0;
+        height:100%;
+    }
+    
+    .carna-menu{
+        float: none;
+        
+        li{
+            float: none;
+        }
+    }
+}
+
+
+/* =============================================================================
+  MM - MATERIAL MENU
+============================================================================= */
+
+/**
+ * MM - Material Menu
+ *
+ * All the styles for the material menu here! I've prefixed them all with "mm",
+ * which means material menu.
+ */
+
+
+
+.mm-menu-toggle {
+	position: relative;
+	float: right;
+	height: 52px;
+	width: 36px;
+    border:0;
+    
+    @include media('>desktop'){
+        @include center(y);
+    }
+    
+
+	/* replace text with background image */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	color: transparent;
+    outline: none;
+    background-color: transparent;
+    @include transition(all .2s);
+
+	span, 
+	span::before, 
+	span::after {
+	    /* hamburger icon in CSS */
+	    position: absolute;
+	    width: 20px;
+	    height: 2px;
+	    background-color: #FFF;
+	    @include backface-visibility(hidden);
+	    @include transition(background-color .2s, transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+        
+	    .white_bg & {
+	        background-color: $headers-color;
+	    }
+	}
+
+	span {
+		/* this is the central line */
+		top: 25px;
+		left: 8px;
+		
+
+		&::before, 
+		&:after {
+			/* these are the upper and lower lines */
+			content: '';
+			left: 0;
+			
+		}
+		
+		&::before {
+			bottom: 6px;
+		}
+
+		&::after {
+			top: 6px;
+		}
+	}
+	
+	&.active {
+
+		span {
+			/* hide line in the center */
+			background-color: rgba(#FFF, 0);
+
+			&::before, 
+			&::after {
+				/* keep visible other 2 lines */
+				background-color: rgba(#FFF, 1);
+			}
+
+			&::before {
+				@include transform(translateY(6px) rotate(-45deg));
+			}
+
+			&::after {
+				@include transform(translateY(-6px) rotate(45deg));
+			}
+		}
+	}
+    
+    .is-fill &,
+    .header-fill & {
+        @include media(">desktop") {
+            span,
+            span::before,
+            span::after {
+                background-color: $headers-color;
+                @include transition(all .5s);
+            }
+            &.active {
+                span {
+                    /* hide line in the center */
+                    background-color: rgba(#fff, 0);
+                    &::before,
+                    &::after {
+                        /* keep visible other 2 lines */
+                        background-color: rgba(#fff, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * The actual menu
+ *
+ * Here be all the stuff for the menu itself.
+ */
+
+.mm-menu {
+  position: fixed;
+  top: 0; 
+  right: 0;
+  z-index: 900;
+  background: $main-color url(../images/pattern/pattern-red.png);
+  width: 100%;
+  height: 100%;
+    padding:2em;
+  overflow-y: auto;
+  box-shadow: 0;
+  @include transform(translateX(100%));
+  @include transition(transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955), box-shadow 0.5s);
+}
+
+.mm-menu.active {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  @include transform(translateX(0));
+}
+
+@media all and ( min-width: 300px ) {
+  .mm-menu {
+    width: 300px;
+    @include transform(translateX(300px));
+  }
+}
+
+/* header */
+
+.mm-menu__title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* list */
+
+.mm-menu__address{
+    padding:1em 0;
+    margin:1em 0;
+    color:#fff;
+    
+    h6{
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color:#fff;
+        font-weight: bold;
+    }
+
+    .mm-menu__list{
+        li{
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.mm-menu__social{
+    li{
+        display: inline;
+        a{
+            display: inline-block;
+            margin:0 .5em;
+            color:#fff;
+            @include transition(color .3s ease-in-out);
+            
+            &:hover{
+                color:$base-color;
+            }
+        }
+    }
+}
+
+.mm-menu__item {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  @include transform(translateX(-50%));
+}
+
+.mm-menu__item.in-view {
+  opacity: 1;
+  @include transform(translateX(0));
+}
+
+.mm-menu__link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 4px 0;
+  padding: 12px;
+  color: $link-color;
+  text-decoration: none;
+  @include transition (background 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955), color 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+.mm-menu__link-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* the touch effect, for when a link is touched */
+
+.mm-menu__link--touch-effect {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 0; height: 0;
+  border-radius: 100%;
+  @include transform(scale(0));
+  @include transform-origin(50% 50%);
+}
+
+.mm-menu__link--touch-effect.animating {
+  @include transform(scale(1));
+  @include transition(transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+/**
+ * Menu mask
+ *
+ * A mask that comes in and covers the wrapper when the menu is active.
+ */
+
+.mm-menu-mask {
+  display: block;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 106;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  visibility: hidden;
+  opacity: 0;
+  @include transition(opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+
+  &.active {
+      visibility: visible;
+      opacity: 1;
+  }
+}

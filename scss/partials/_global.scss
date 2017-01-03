@@ -1,0 +1,116 @@
+/*-----------------------------------------------------------------------------
+   1. Global
+-----------------------------------------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+    padding:0;
+    margin:0;
+}
+
+html {
+    max-width:100%;
+    height: 100% ;
+    overflow-x:hidden; 
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    
+    &.full-width{
+        overflow:hidden;
+    }
+}
+
+
+body{
+    min-height: 100% ;
+    font:#{$font-weight} #{$base-font-size}/#{$baseline} $main-font;
+    color:$text-color;
+    -webkit-font-smoothing: subpixel-antialiased;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 2rem;
+	color: $headers-color;
+	font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1em;
+}
+
+h1 {
+	font-size: 34px;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 20px;
+    font-weight: bold;
+}
+
+h4 {
+	font-size: 18px;
+	font-weight: bold;
+}
+ 
+h5 {
+	font-size: 16px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    
+    &:hover,
+    &:focus{
+        text-decoration: none;
+    }
+}
+
+.big-title{
+    @include media("<tablet"){
+        font-size: 20px;
+    }
+}
+
+.section-header{
+    text-transform: uppercase;
+    position: relative;
+    font-size: 30px;
+    display: inline-block;
+    z-index:2;
+    margin-top: 0;
+    margin-bottom: $space-y;
+}
+
+.underline{
+    position: absolute;
+    left:0;
+    bottom:-10px;
+    width:0;
+    height:10px;
+    z-index:-1;
+    background-color: $main-color;
+}
+
+
+.standard-title{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+

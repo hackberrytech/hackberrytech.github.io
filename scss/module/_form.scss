@@ -1,0 +1,116 @@
+/*-----------------------------------------------------------------------------
+   12. Form
+-----------------------------------------------------------------------------*/
+
+.quform-success-message,
+.quform-outer-no-js .quform-success-message {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 10px 0;
+    font-size: 12px;
+    padding: 3px 12px;
+    color: #fff;
+    width:100%;
+    background-color: #0eb493;
+    &:before {
+        content: '\f00c';
+        display: inline-block;
+        font-family: 'FontAwesome';
+        margin-right: 5px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.quform-element{
+    margin-bottom:4em;
+    text-align: left;
+    
+    label{
+        display: block;
+        margin-bottom: .5em;
+        text-align:left;
+        font-size:12px;
+        text-transform: uppercase;
+        color:$headers-color;
+        
+        .quform-required{
+            font-size:200%;
+            color:#ee1c25;
+            line-height:12px;
+            vertical-align:bottom;
+        }
+    }
+
+    
+    input,
+    textarea{
+        padding:12px 20px;
+        width:100%;
+        border-bottom:4px solid $base-color;
+        background-color: transparent;
+    }
+    
+    .quform-errors{
+        display: none;
+    }
+    
+    .quform-error{
+        position: absolute;
+        display: inline-block;
+        float:left;
+        margin-top: 10px;
+        font-size:12px;
+        padding:3px 12px;
+        color:#fff;
+        background-color: #ee1c25;
+        
+        &:before{
+            content:'\f071';
+            display: inline-block;
+            font-family: 'FontAwesome';
+            margin-right: 5px;
+            position: relative;
+            top: 1px;
+        }
+    }
+    
+        /*Captcha*/
+    
+    .quform-captcha-inner {
+        position: relative;
+        float: left;
+        margin-top: 8px;
+        background: url(../quform/images/captcha-refresh-icon.png) no-repeat center center;
+    
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+
+.quform-submit-inner{
+    float: left;
+}
+
+/*Loading the submit*/
+.quform-loading-wrap {
+    display: none;
+    float: left;
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    margin-top: 12px;
+    margin-left: 10px;
+
+}
+.quform-loading-wrap .quform-loading {
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    background: transparent url('../images/ajax-loader.gif') no-repeat center center;
+}

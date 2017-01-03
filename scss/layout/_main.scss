@@ -1,0 +1,465 @@
+/*-----------------------------------------------------------------------------
+   14. Main
+-----------------------------------------------------------------------------*/
+
+
+#work{
+    background-color: $base-color2;
+    position: relative;
+    z-index: 15;
+}
+
+.pages,
+.bg-pattern{
+    background-image: url(../images/pattern/pattern-light.png);
+}
+
+.bg-pattern-dark{
+    background-image: url(../images/pattern/pattern-dark.jpg);
+}
+
+.deco-parting,.counter-content{
+    background-image: url(../images/pattern/pattern-dark.jpg);
+}
+
+.l-portfolio{
+    padding-top: $space-y;
+}
+
+
+.social-inline{
+    padding-top:2em;
+    
+    li{
+        display: inline-block;
+        
+        a{
+            display: block;
+            margin-right: 5px;
+        }
+    }
+}
+
+/* HERO HEADER */
+.hero-header, .slide-txt h1 { 
+  font-size: 80px;
+  text-transform: none;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  .hero-header, .slide-txt h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-header, .slide-txt h1 {
+    font-size: 40px;
+  }
+}
+
+
+.inner-link{
+    position: absolute;
+    bottom:0;
+    @include center(x);
+    z-index: 100;
+    font-size: 50px;
+    color:$headers-color;
+    
+    @include media("<desktop"){
+        display: none;
+    }
+    
+    &:focus{
+        color:$headers-color;
+    }
+}
+
+/*********************************************
+	-	DECO PARTING 	-
+**********************************************/
+
+.deco-parting {
+    text-align: center;
+    padding: $space-y 0;
+    @include media(">desktop") {
+        display: table;
+        text-align: left;
+        background-color: $base-color;
+        [class*='col-'] {
+            display: table-cell;
+            float: none;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .deco-header {
+            font-size: 200px;
+            text-align: right;
+            padding-right: 30px;
+            margin: 0;
+            
+            
+            
+            &:after {
+                content: '+';
+                font-size: 100px;
+                vertical-align: text-top;
+            }
+        }
+    }
+    
+    .deco-header {
+        color: $main-color;
+        text-transform: uppercase;
+        font-weight: normal;
+        line-height: 1.1;
+    }
+    
+    h3 {
+        text-transform: uppercase;
+        margin-top: 0;
+        color: #fff;
+        font-weight: normal;
+    }
+    p {
+        @include media(">desktop") {
+           width: 50%; 
+        }
+        color: #fff;
+    }
+}
+
+
+/*********************************************
+	-	TESTIMONIAL CLASSIC 	-
+**********************************************/
+
+.test-classic {
+    position: relative;
+    text-align: center;
+    color: $text-color;
+    background-position: 50% 50%;
+    border-bottom:1px solid $border-color;
+    
+    .item{
+        img {
+            @include size(80px);
+            display: inline;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        .standard-title {
+            display: inline-block;
+            border-top:4px solid $text-color;
+//            color: #fff;
+            padding-top:20px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            color:$headers-color;
+        }
+        
+        &.overlay{
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 1px rgba(0,0,0,.2);
+
+            
+            p{
+                color:$text-color;
+                font-size: 14px; 
+            }
+            
+            .standard-title{
+                padding-top: 20px;
+                position: relative; 
+                
+                &:after{
+                    content:'';
+                    background-color: $border-color;
+                    width: 50px;
+                    height:1px;
+                    position: absolute;
+                    top:0;
+                    @include center(x);
+                }
+            }
+            
+            .standard-title,
+            span{
+                color:$base-color;
+            }
+            
+            span{
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+    
+    .bx-wrapper .bx-pager.bx-default-pager a {
+        background-color: $base-color;
+        &:hover {
+            background-color: $main-color;
+        }
+        &.active {
+            background-color: $main-color;
+        }
+    }
+}
+
+/*********************************************
+	-	LAYOUT BRAND 	-
+**********************************************/
+
+
+.layout-brand{
+    li{
+        padding-bottom:$space-y-half;
+    }
+    img{
+        width:120px;
+    }
+    
+    &.border-b{
+        border-bottom:1px solid darken($base-color2,10%)
+    }
+}
+
+/*********************************************
+	-	CONTENT BOX SIDE 	-
+**********************************************/
+    
+.content-box-side{
+    padding:0 30px;
+    &:nth-child(-n+3){
+    padding-bottom:$space-y-half;
+    }
+    i{
+        width:60px;
+        margin-top: 10px;
+        padding-right: 20px;
+        font-size:30px;
+        text-align:center;
+        color:$main-color;
+    }
+    
+    .box-side-details{
+        margin-left: 20px;
+        overflow:hidden;
+        
+        .box-side__header{
+            display: block;
+            
+            h3{
+                display: inline-block;
+            }
+            
+            i{
+                float: right;
+                text-align: right;
+                margin-top: 6px;
+            }
+        }
+    }
+    
+    @media only screen and (max-width:991px){
+        &:nth-child(n){
+            padding-bottom:3em;
+        }
+        &:last-child{
+            padding-bottom:0;
+        }
+    }
+
+    &.no-padding{
+        padding-bottom:0;
+    }
+}
+
+
+/*********************************************
+	-	equal-height 	-
+**********************************************/
+
+.equal-height{
+    @include media(">desktop"){
+        >[class^="col-"]{
+            float: none;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+
+/* ITEM IMG DETAILS */
+
+.item-img-details{
+    padding:2em;
+    
+    @include media(">wide-screen"){
+        padding-left: 84px;
+        padding-right: 84px;
+    }
+    
+    i{
+        color:$main-color;
+    }
+}
+
+/*********************************************
+	-	TEAM BLOCK 	-
+**********************************************/
+
+.team-block{
+    display: block;
+    position: relative;
+    @include transition(transform .3s ease);
+    
+    .team-block__details{
+        padding:2em;
+        position: absolute;
+        @include size(100%);
+        top:0;
+        left:0;
+        background-color: rgba($main-color,.9);
+        color:#fff;
+        text-transform: capitalize;
+        opacity:0;
+        @include transition(opacity .3s ease);
+        
+        h3{
+            text-transform: uppercase;
+            color:#fff;
+            border-bottom:8px solid;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .team-block__icon{
+            position: absolute;
+            bottom:2em;
+            left:2em;
+        }
+    }
+    
+    &:hover{
+        z-index:10;
+        @include transform(scale(1.01));
+        box-shadow: 0 10px 20px 0px rgba(0,0,0,0.15);
+        .team-block__details{
+            opacity:1;
+        }
+    }
+}
+
+
+/*********************************************
+	-	TEAM DETAILS 	-
+**********************************************/
+
+.team-details {
+    position: relative;
+    color: #FFF;
+    padding: 2em;
+    width:auto;
+    max-width: 500px;
+    margin: 20px auto;
+    background: $main-color url(../images/pattern/pattern-red.png);
+    
+    .standard-title{
+        display: inline-block;
+        color:#fff;
+        border-bottom:8px solid #fff;
+        font-size: 20px;
+    }
+    
+    p{
+        display: block;
+    }
+}
+
+/* TEAM DETAILS SOCIAL ICONS */
+
+.team-details__social-icons {
+    margin-top: 1em;
+    
+    li {
+        
+        display: inline-block;
+        a {
+            position: relative;
+            display: block;
+            margin-right: 5px;
+            color: #fff;
+            @include transition(color .3s ease-in-out);
+            
+            &:hover{
+                color:$base-color;
+            }
+        }
+    }
+}
+
+// hero-paragraph
+
+.hero-paragraph{
+    font-size: 30px;
+    line-height: 1.5em;
+    margin-bottom: 96px;
+
+    .highlighted{
+        background-color: $main-color;
+        padding: 5px;
+        color:$base-color;
+    }
+    @include media("<desktop"){
+        font-size: 20px
+    }
+}
+
+/*********************************************
+	-	BACK TO TOP	-
+**********************************************/
+
+
+.back-to-top {
+    position: fixed;
+    z-index:99999;
+    bottom: 1em;
+    right: 1em;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba($base-color, 0.80);
+    font-size: 12px;
+    @include size(30px);
+    line-height: 30px;
+    text-align: center;
+    display: none;
+    @include transition(all .3s ease-in-out); 
+    
+        &:hover {    
+        background-color: $main-color;
+        color:#fff;
+    }
+}
+
+
+
+
+

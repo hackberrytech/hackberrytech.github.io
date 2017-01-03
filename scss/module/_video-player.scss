@@ -1,0 +1,123 @@
+/*-----------------------------------------------------------------------------
+   13. video player
+-----------------------------------------------------------------------------*/
+
+.header-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-video iframe,
+.header-video video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-video iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.header-video video {
+  width: 100%;
+}
+
+.header-video__teaser-video {
+  width: 100%;
+  height: auto; 
+}
+
+.header-video__media {
+  width: 100%;
+  height: auto;
+}
+
+.header-video__title{
+    position: absolute;
+    margin: 0;
+    @include center(xy);
+    z-index:5;
+    font-size: 110px;
+    text-shadow:3px 3px 0px rgba(0,0,0,.2);
+    
+    @include media("<huge-screen"){
+        font-size: 90px;
+    }
+    
+    @include media("<wide-screen"){
+        font-size: 70px;
+    }
+    
+    @include media("<desktop"){
+        font-size: 50px;
+    }
+    
+    @include media("<tablet"){
+        font-size: 30px;
+    }
+}
+
+.header-video__sub-title{
+    position: absolute;
+    text-transform: capitalize;
+    color:$text-color;
+    @include center(x);
+    top:57%;
+    z-index:5;
+    letter-spacing: 2px;
+    
+    @include media("<desktop"){
+        display: none !important;
+    }
+}
+
+.header-video__play-trigger{
+    position: absolute;
+    margin-bottom: 5px;
+    @include center(x);
+    bottom:10%;
+    z-index:5;
+    text-transform: capitalize;
+    text-align: center;
+    color:$base-color;
+    @include transition(color .3s ease-in-out);
+    
+    i{
+        @include size(40px);
+        line-height: 40px;
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: center;
+        border:1px solid;
+        @include transition(border-radius .3s ease-in-out);
+    }
+    
+    &:hover{
+        color:$main-color;
+        
+        i{
+            border-radius:100%;
+        }
+        
+    }
+}
+
+#header-video__close-trigger{
+    position: absolute;
+    right:30px;
+    top:30px;
+    @include size(40px);
+    color:#fff;
+    z-index: 2001;
+    background-color: transparent;
+    border:1px solid;
+    @include transition(color .3s ease-in-out, border-radius .3s ease-in-out);
+
+    &:hover{
+        color:$main-color;
+        border-radius:100%;
+    }
+}

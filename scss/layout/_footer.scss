@@ -1,0 +1,29 @@
+/*-----------------------------------------------------------------------------
+   20. Footer
+-----------------------------------------------------------------------------*/
+
+.main-footer{
+    background-image: url(../images/pattern/pattern-dark.jpg);
+    
+    .title-footer{
+        color:#fff;
+        margin: 0;
+    }
+}
+
+.footer__social{
+	margin-top: 30px;
+    li{
+        display: inline;
+        a{
+            display: inline-block;
+            margin:0 .5em;
+            color:#fff;
+            @include transition(color .3s ease-in-out);
+            
+            &:hover{
+                color:$main-color;
+            }
+        }
+    }
+}

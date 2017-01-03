@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------
+   9. Buttons
+-----------------------------------------------------------------------------*/
+
+$btn-xsmall:.50rem 1.25rem;
+$btn-small:.75rem 1.5rem;
+$btn-medium:1rem 1.75rem;
+$btn-large:1.5rem 2.25rem;
+
+@mixin btn-size($padding:$padding){
+    padding:$padding;
+  
+    @if      $padding == $btn-xsmall { font-size: 10px; }
+    @else if $padding == $btn-small { font-size: 12px; }
+    @else if $padding == $btn-medium { font-size: 14px; }
+    @else if $padding == $btn-large { font-size: 16px; }
+}
+
+
+%btn-base{
+    
+    display:inline-block;
+    width:auto;
+    height:auto;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    cursor:pointer;
+    line-height: 1.5em;
+    text-align: center;
+    @include transition(color .4s ease-in-out , opacity .4s ease , transform .4s ease, background-color .4s ease , border-color .4s ease  );
+}
+
+
+@mixin btn-color($color) {
+	background-color: $color;
+	border: 1px solid mix(black, $color, 25%);
+    color:#fff;
+
+	
+	&:hover,
+    &:active,
+    &:focus{
+		cursor: pointer;
+		background-color: $main-color;
+		border-color: $main-color;
+        color:#fff;
+	}
+}
+
+
+
+.btn-main{
+    @include btn-color($headers-color);
+    @extend %btn-base;
+
+    &.xsmall{
+      @include btn-size($btn-xsmall);
+    }
+    &.small{
+      @include btn-size($btn-small);
+    }
+    &.medium{
+      @include btn-size($btn-medium);
+    }
+    &.large{
+      @include btn-size($btn-large );
+    }
+}

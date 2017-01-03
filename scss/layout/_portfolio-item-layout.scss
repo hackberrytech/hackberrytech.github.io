@@ -1,0 +1,91 @@
+/*-----------------------------------------------------------------------------
+   16. Portfolio item layout
+-----------------------------------------------------------------------------*/
+
+.block-item{
+    position: relative;
+    width:100%;
+    display: block;
+    overflow:hidden;
+    @include transition(transform .3s ease-out );
+    
+    .block-item__bg{
+        position: absolute;
+        top:15px;
+        left:15px;
+        right:15px;
+        bottom:15px;
+        @include size(auto);
+        opacity:0;
+        @include transform(translate3d(0 , 10% , 0));
+        @include transition(opacity .2s ease-in-out , transform .2s ease-in-out);
+        background: rgba($main-color , .9);
+    }
+    
+    
+    .block-item__details{
+        position: absolute;
+        bottom:20px;
+        left:25px;
+        @include transition(transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.5));
+        
+        p,h3{
+            text-transform: uppercase;
+            color:#fff;
+        }
+        
+        p{
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+        
+        h3{
+            margin: 0;
+            font-size: 16px;
+            
+            span{
+                font-weight: bold; 
+            }
+        }
+    }
+    
+    .block-item__icon{
+        position: absolute;
+        text-align: left;
+        text-transform: uppercase;
+        color:#fff;
+        opacity:0;
+        bottom:20px;
+        left:25px;
+        font-size: 12px;
+        @include transform(translateX(-50%));
+        @include transition(opacity .2s ease-in-out , transform .2s ease-in-out );
+
+    }
+
+    
+    .no-touchy &{
+        
+        &:hover{
+            box-shadow: 0 10px 20px 0px rgba(0,0,0,0.15);
+            @include transform(translate3d(0, 5px, 0));
+            z-index: 10;
+            
+            .block-item__bg{
+                opacity:1;
+                @include transform(translate3d(0 , 0 , 0));
+            }
+
+            .block-item__icon{
+                opacity: 1;
+                bottom:20px;
+                @include transform(translateX(0));
+            }
+
+            .block-item__details{
+                @include transform(translateY(-25px));
+            }
+        }
+    }
+}
+

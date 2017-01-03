@@ -1,0 +1,122 @@
+/*-----------------------------------------------------------------------------
+   18. Blog
+-----------------------------------------------------------------------------*/
+
+.cbp-news{
+    .cbp-item{
+//        position: relative;
+        
+        overflow: visible;
+        
+        a{
+            display: block;
+            background-color: $base-color2;
+            @include transition(transform .3s ease-out , box-shadow .3s ease-out);
+        }
+        
+        time{
+            position: relative;
+            margin-top: -40px;
+            padding: 12px 0;
+            display: inline-block;
+            background-color: #fff;
+            @include size(80px);
+            text-align: center;
+            border-radius:100%;
+            line-height: 14px;
+            font-size: 12px;
+            font-weight: bold;
+            color:$text-color;
+            border:1px solid darken($base-color2,3%);
+            
+            .month-date{
+                display: block;
+                line-height: 22px;
+                font-size: 20px;
+                color:$base-color;
+            }
+            
+            .year-date{
+                display: block;
+            }
+        }
+        
+        h3{
+            text-transform: capitalize;
+            font-size: 22px;
+            padding:30px;
+            line-height: 1.5em;
+        }
+        
+        &:after{
+            content:'';
+            position: absolute;
+            bottom:0;
+            left:0;
+            width:0;
+            height:10px;
+            background-color: $main-color;
+            @include transition(all 1s cubic-bezier(0.175, 0.885, 0.32, 1.5))
+            
+        }
+        
+        &:hover{
+            a{
+                box-shadow: 0 10px 20px 0px rgba(0,0,0,0.15);
+                @include transform(translate3d(0, 5px, 0));
+            }
+            
+        }
+    }
+}
+
+/* NEWS ITEM */
+
+.news-item{
+    .news-item__content{
+        background-color: #fff;
+        box-shadow: 0 10px 20px 0px rgba(0,0,0,0.15);
+        
+        .news-item__details{
+            padding: 2em;
+        }
+        
+        time{
+            position: relative;
+            margin-top: -40px;
+            padding: 12px 0;
+            display: inline-block;
+            background-color: #fff;
+            @include size(80px);
+            text-align: center;
+            border-radius:100%;
+            line-height: 14px;
+            font-size: 12px;
+            font-weight: bold;
+            color:$text-color;
+            border:1px solid darken($base-color2,3%);
+            
+            .month-date{
+                display: block;
+                line-height: 22px;
+                font-size: 20px;
+                color:$base-color;
+            }
+            
+            .year-date{
+                display: block;
+            }
+        }
+        
+        h3{
+            text-transform: capitalize;
+            font-size: 30px;
+            padding:30px;
+            line-height: 1.5em;
+        }
+        
+        p{
+            padding-bottom: 2em;
+        }
+    }
+}

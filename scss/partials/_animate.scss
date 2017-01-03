@@ -1,0 +1,147 @@
+/*-----------------------------------------------------------------------------
+   7. Animate
+-----------------------------------------------------------------------------*/
+
+.animated {
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);
+}
+
+/*********************************************
+	-	fadeInRight	-
+**********************************************/
+
+@include keyframes(fadeInRight) {
+  from {
+    opacity: 0;
+    @include transform(translate3d(100%, 0, 0));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+
+.fadeInRight {
+    @include animation-name(fadeInRight);
+}
+
+/*********************************************
+	-	fadeInUp	-
+**********************************************/
+
+@include keyframes(fadeInUp) {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0, 100%, 0));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+
+.fadeInUp {
+    @include animation-name(fadeInUp);
+}
+
+/*********************************************
+	-	fadeIn	-
+**********************************************/
+
+@include keyframes(fadeIn) { 
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.fadeIn {
+    @include animation-name(fadeIn);
+}
+
+/*********************************************
+	-	bouncIn	-
+**********************************************/
+
+@include keyframes (bouncIn){
+    from{
+        @include transform(scale(0));
+        @include animation-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.5));
+    }
+    
+    to{
+        @include transform(scale(1));
+        @include animation-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.5));
+    }
+}
+
+.bouncIn {
+    @include animation-name(bouncIn);
+    @include animation-duration(.5s);
+}
+
+/*********************************************
+	-	fullWidth	-
+**********************************************/
+
+@include keyframes (fullWidth){
+    from{
+        width:0;
+        @include animation-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.5));
+    }
+    
+    to{
+        width:100%;
+        @include animation-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.5));
+    }
+}
+
+.fullWidth {
+    @include animation-name(fullWidth);
+}
+
+
+
+.animated{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+
+@include keyframes (scrollDown){
+    0%{
+        opacity:0;
+        @include transform(translateY(-100%));
+    }
+    
+    10%{
+        opacity:1;
+        @include transform(translateY(-100%));
+    }
+    
+    50%{
+        opacity:1;
+        @include transform(translateY(-100%));
+    }
+    
+    100%{
+        opacity:0;
+        @include transform(translateY(0));
+    }
+}
+
+.scrollDown{
+    @include animation(3s ease-in-out infinite scrollDown );
+}
