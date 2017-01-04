@@ -9399,11 +9399,12 @@ a[data-popup] {
 -----------------------------------------------------------------------------*/
 .main-footer {
   background-image: url(../images/pattern/pattern-dark.jpg);
+  background: #f0f0f0;
 }
 
 .main-footer .title-footer {
-  color: #fff;
   margin: 0;
+  padding-bottom: 20px;
 }
 
 .footer__social {
