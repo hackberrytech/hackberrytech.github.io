@@ -41,6 +41,10 @@ html {
   margin: 0;
 }
 
+.linkColor {
+  color: #018CCF;
+}
+
 html {
   max-width: 100%;
   height: 100%;
